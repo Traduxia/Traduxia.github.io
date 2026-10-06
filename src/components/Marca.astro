@@ -1,0 +1,29 @@
+---
+// Logotipo real de Traduxia Idiomas (sello circular, en src/assets/).
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-traduxia.png';
+
+interface Props {
+  tamano?: number;
+  loading?: 'eager' | 'lazy';
+}
+const { tamano = 44, loading = 'eager' } = Astro.props;
+---
+
+<Image
+  class="emblema"
+  src={logo}
+  width={tamano}
+  height={tamano}
+  alt=""
+  loading={loading}
+  decoding="async"
+/>
+
+<style>
+  .emblema {
+    display: block;
+    flex: none;
+    border-radius: 50%;
+  }
+</style>

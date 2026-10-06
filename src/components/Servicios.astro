@@ -1,0 +1,98 @@
+---
+import ServicioCard from './ServicioCard.astro';
+---
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="dot"></span>Qué hacemos</span>
+      <h2>Todo lo que tu proyecto necesita, en cualquier idioma</h2>
+      <p>
+        Traducción, interpretación y revisión con traductores nativos
+        especializados por sector.
+      </p>
+    </div>
+
+    <div class="services">
+      <ServicioCard
+        titulo="Traducción jurada"
+        texto="Traducciones oficiales con validez legal, firmadas por traductor jurado."
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="9" r="6"></circle>
+          <path d="M8.5 14.5L7 21l5-3 5 3-1.5-6.5"></path>
+        </svg>
+      </ServicioCard>
+
+      <ServicioCard
+        titulo="Traducción técnica"
+        texto="Manuales, patentes y documentación especializada, con el vocabulario exacto."
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path>
+          <path d="M14 2v6h6"></path>
+          <circle cx="15.5" cy="16.5" r="3"></circle>
+          <path d="M15.5 14v1M15.5 18v1M13.4 15.1l.9.5M16.7 17l.9.5M13.4 17.9l.9-.5M16.7 16l.9-.5"></path>
+        </svg>
+      </ServicioCard>
+
+      <ServicioCard
+        titulo="Localización web y software"
+        texto="Adaptamos tu web, app o producto a cada mercado, cultura incluida."
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"></path>
+        </svg>
+      </ServicioCard>
+
+      <ServicioCard
+        titulo="Interpretación"
+        texto="Simultánea, consecutiva y de enlace, en remoto o presencial."
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a3 3 0 00-3 3v6a3 3 0 006 0V5a3 3 0 00-3-3z"></path>
+          <path d="M19 10v1a7 7 0 01-14 0v-1M12 18v3M9 21h6"></path>
+        </svg>
+      </ServicioCard>
+
+      <ServicioCard
+        titulo="Revisión y corrección"
+        texto="Revisión por un segundo traductor nativo para pulir cada detalle."
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 20h9"></path>
+          <path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"></path>
+        </svg>
+      </ServicioCard>
+
+      <ServicioCard
+        titulo="Traducción literaria y creativa"
+        texto="Libros, marketing y contenido con el mismo tono que el original."
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 7c-2-2-5-2-8-1v13c3-1 6-1 8 1 2-2 5-2 8-1V6c-3-1-6-1-8 1z"></path>
+          <path d="M12 7v13"></path>
+        </svg>
+      </ServicioCard>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .services {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 680px) {
+    .services {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,81 @@
+---
+import Marca from './Marca.astro';
+import { empresa, direccionUnaLinea, enlaces } from '../data/traduxia.js';
+---
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="#top" aria-label="Traduxia Idiomas, inicio">
+        <Marca tamano={44} loading="lazy" />
+        <span>Traduxia Idiomas<small>{empresa.eslogan}</small></span>
+      </a>
+      <ul class="foot-links">
+        {
+          enlaces.map((e) => (
+            <li>
+              <a href={e.href}>{e.texto}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="copy">
+      © <span id="year">{new Date().getFullYear()}</span>
+      {empresa.nombre} · {direccionUnaLinea()} · {empresa.email}
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    padding: 56px 0 40px;
+    border-top: 1px solid var(--line);
+    margin-top: 40px;
+  }
+  .foot {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-family: var(--serif);
+    font-size: 1.28rem;
+    color: var(--ink);
+  }
+  .brand small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .foot-links {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  .foot-links a {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .foot-links a:hover {
+    color: var(--brand-deep);
+  }
+  .copy {
+    width: 100%;
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+</style>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://traduxia.github.io/sitemap-index.xml
