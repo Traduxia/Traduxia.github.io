@@ -1,5 +1,11 @@
 ---
 // Logotipo real de Traduxia Idiomas (sello circular, en src/assets/).
+//
+// El sello tiene texto muy fino en el anillo exterior, así que se genera a
+// 3x el tamaño de pantalla (y en PNG, sin compresión con pérdida) para que
+// no se vea borroso en pantallas de alta densidad (retina). El tamaño en
+// pantalla lo fija el `style` inline; el de `width`/`height` es solo la
+// resolución del archivo que genera Astro.
 import { Image } from 'astro:assets';
 import logo from '../assets/logo-traduxia.png';
 
@@ -8,16 +14,20 @@ interface Props {
   loading?: 'eager' | 'lazy';
 }
 const { tamano = 44, loading = 'eager' } = Astro.props;
+const resolucion = tamano * 3;
 ---
 
 <Image
   class="emblema"
   src={logo}
-  width={tamano}
-  height={tamano}
+  width={resolucion}
+  height={resolucion}
+  format="png"
+  quality={100}
   alt=""
   loading={loading}
   decoding="async"
+  style={`width:${tamano}px;height:${tamano}px;`}
 />
 
 <style>
